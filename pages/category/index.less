@@ -1,0 +1,52 @@
+/* pages/category/index.wxss */
+page{
+  height:100%;
+  .cates{
+    height: 100%;
+    .cates-container{
+      // less中使用calc注意写法
+      height: ~'calc(100vh - 90rpx)';
+      display: flex;
+      .leftMenu{
+        flex: 2;
+        .menu-item{
+          height: 70rpx;
+          display: flex;
+          justify-content: center;
+        }
+        .active{
+          color: var(--themeColor);
+          border-left: 5rpx solid currentColor;
+        }
+      }
+      .rightCon{
+        flex: 5;
+        .goods-group{
+          .goods-title{
+            height:80rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .delimiter{
+              color:#aaa;
+              padding: 0 10rpx;
+            }
+            .title{
+            }
+          }
+          .goods-list{
+            display: flex;
+            flex-wrap: wrap;
+            navigator{
+              width: 33.33%;
+              text-align: center;
+              image{
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

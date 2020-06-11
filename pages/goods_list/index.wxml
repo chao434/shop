@@ -1,0 +1,26 @@
+<!--pages/goods_list/index.wxml-->
+<view class="" hover-class="none" hover-stop-propagation="false">
+  <searchInput></searchInput>
+  <!-- 监听自定义事件 -->
+  <Tabs tabs="{{tabs}}" bindtabsItemTap="handTabsItemTap">
+    <block wx:if="{{tabs[0].isActive}}">
+      <view class="first-tab">
+        <navigator class="goods-item1" target="" url="" wx:for="{{goodsList}}"
+        wx:key="goods_id">
+          <!-- 左侧商品图片 -->
+          <view class="goods-img">
+            <image  mode="widthFix" class="" src="{{item.goods_small_logo?item.goods_small_logo:'../../icon/test.png'}}"></image>
+          </view>
+          <!-- 右侧商品信息 -->
+          <view class="goods-info">
+            <view class="goods-name">{{item.goods_name}}</view>
+            <view class="goods-price">¥{{item.goods_price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">2</block>
+    <block wx:elif="{{tabs[2].isActive}}">3</block>
+  </Tabs>
+</view>
+
