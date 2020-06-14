@@ -5,11 +5,17 @@
   <Tabs tabs="{{tabs}}" bindtabsItemTap="handTabsItemTap">
     <block wx:if="{{tabs[0].isActive}}">
       <view class="first-tab">
-        <navigator class="goods-item1" target="" url="" wx:for="{{goodsList}}"
-        wx:key="goods_id">
+        <navigator class="goods-item1" 
+                  target="" 
+                  wx:for="{{goodsList}}"
+                  url="/pages/goods_detail/index?goods_id={{item.goods_id}}" 
+                  wx:key="goods_id">
           <!-- 左侧商品图片 -->
           <view class="goods-img">
-            <image  mode="widthFix" class="" src="{{item.goods_small_logo?item.goods_small_logo:'../../icon/test.png'}}"></image>
+            <image mode="widthFix" 
+                  class="" 
+                  src="{{item.goods_small_logo?item.goods_small_logo:'../../icon/test.png'}}">
+            </image>
           </view>
           <!-- 右侧商品信息 -->
           <view class="goods-info">

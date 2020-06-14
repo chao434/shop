@@ -1,1 +1,9 @@
-/* pages/goods_detail/index.wxss */
+/* pages/goods_detail/index.wxss .*/
+@import "../../styles/iconfont.wxss";
+.detail-swriper swiper {
+  height: 70vm;
+  text-align: center;
+}
+.detail-swriper swiper image {
+  width: 50%;
+}
