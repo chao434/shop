@@ -1,6 +1,15 @@
 <!--pages/cart/index.wxml-->
 <view class="get-address-row">
-  <view class="address-btn">
+<!-- 当收货地址不存在的时候显示地址 -->
+  <view class="address-btn" wx:if="{{!address.userName}}">
     <button type="primary" plain bindtap="handleChoseAddress">获取收货地址</button>
+  </view>
+  <!-- 当收货地址存在时显示地址 -->
+  <view wx:else class="user-info-row">
+    <view class="user-info">
+      <view>收件人:{{address.userName}}</view>
+      <view>{{address.all}}</view>
+    </view>
+    <view class="user-phone">{{address.telNumber}}</view>
   </view>
 </view>

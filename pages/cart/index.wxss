@@ -5,3 +5,14 @@
 .get-address-row .address-btn button {
   width: 80%;
 }
+.user-info-row {
+  display: flex;
+  padding: 20rpx;
+}
+.user-info-row .user-info {
+  flex: 5;
+}
+.user-info-row .user-phone {
+  flex: 3;
+  text-align: right;
+}
