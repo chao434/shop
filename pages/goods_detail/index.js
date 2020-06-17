@@ -48,6 +48,7 @@ Page({
     if(index==-1){
       //第一次添加
       this.goodsInfo.number=1
+      this.goodsInfo.checked=true
       cart.push(this.goodsInfo)
     }else{
       cart[index].number++

@@ -1,6 +1,6 @@
 <!--pages/cart/index.wxml-->
 <view class="get-address-row">
-<!-- 当收货地址不存在的时候显示地址 -->
+  <!-- 当收货地址不存在的时候显示地址 -->
   <view class="address-btn" wx:if="{{!address.userName}}">
     <button type="primary" plain bindtap="handleChoseAddress">获取收货地址</button>
   </view>
@@ -12,4 +12,49 @@
     </view>
     <view class="user-phone">{{address.telNumber}}</view>
   </view>
+</view>
+<!-- 购物车部分 -->
+<view class="cart-row">
+  <view class="cart-title">购物车</view>
+  <view class="cart-main">
+    <view 
+    class="cart-item" 
+    wx:for="{{cart}}"
+    wx:key="goods_id">
+      <view class="cart-checkbox">
+        <checkbox-group bindchange="handleChangechk" data-id="{{item.goods_id}}">
+          <checkbox checked="{{item.checked}}"></checkbox>
+        </checkbox-group>
+      </view>
+      <navigator>
+        <image class="" src="{{item.goods_small_logo}}"></image>
+      </navigator>
+      <view class="cart-detail-info">
+        <view class="goods-name">{{item.goods_name}}</view>
+        <view class="goods-price-item">
+          <view class="goods-price">¥{{item.goods_price}}</view>
+          <view class="cart-num-tool">
+            <view class="tool-edit">-</view>
+            <view class="number">{{item.number}}</view>
+            <view class="tool-edit">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 底部工具栏 -->
+<view class="footer-tool">
+  <view class="footer-chk">
+    <checkbox-group bindchange="">
+      <checkbox class="chk" checked="{{allchecked}}">全选</checkbox>
+    </checkbox-group>
+  </view>
+  <view class="footer-total-price">
+    <view class="price-total">
+      合计: <text class="price-text">¥{{totalPrice}}</text>
+    </view>
+    <view class="">包含运费</view>
+  </view>
+  <view class="footer-pay">结算({{totalNum}})</view>
 </view>
