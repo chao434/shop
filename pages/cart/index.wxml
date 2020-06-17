@@ -34,9 +34,9 @@
         <view class="goods-price-item">
           <view class="goods-price">¥{{item.goods_price}}</view>
           <view class="cart-num-tool">
-            <view class="tool-edit">-</view>
+            <view bindtap="handleChangeNumber" data-id="{{item.goods_id}}" data-operation="{{-1}}" class="tool-edit">-</view>
             <view class="number">{{item.number}}</view>
-            <view class="tool-edit">+</view>
+            <view bindtap="handleChangeNumber" data-id="{{item.goods_id}}" data-operation="{{1}}" class="tool-edit">+</view>
           </view>
         </view>
       </view>
@@ -46,7 +46,7 @@
 <!-- 底部工具栏 -->
 <view class="footer-tool">
   <view class="footer-chk">
-    <checkbox-group bindchange="">
+    <checkbox-group bindchange="handleChangAllCheck">
       <checkbox class="chk" checked="{{allchecked}}">全选</checkbox>
     </checkbox-group>
   </view>
