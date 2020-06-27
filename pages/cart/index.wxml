@@ -1,4 +1,4 @@
-<!--pages/cart/index.wxml-->
+<!-- pages/cart/index.wxml -->
 <view class="get-address-row">
   <!-- 当收货地址不存在的时候显示地址 -->
   <view class="address-btn" wx:if="{{!address.userName}}">
@@ -16,32 +16,40 @@
 <!-- 购物车部分 -->
 <view class="cart-row">
   <view class="cart-title">购物车</view>
-  <view class="cart-main">
-    <view 
-    class="cart-item" 
-    wx:for="{{cart}}"
-    wx:key="goods_id">
-      <view class="cart-checkbox">
-        <checkbox-group bindchange="handleChangechk" data-id="{{item.goods_id}}">
-          <checkbox checked="{{item.checked}}"></checkbox>
-        </checkbox-group>
-      </view>
-      <navigator>
-        <image class="" src="{{item.goods_small_logo}}"></image>
-      </navigator>
-      <view class="cart-detail-info">
-        <view class="goods-name">{{item.goods_name}}</view>
-        <view class="goods-price-item">
-          <view class="goods-price">¥{{item.goods_price}}</view>
-          <view class="cart-num-tool">
-            <view bindtap="handleChangeNumber" data-id="{{item.goods_id}}" data-operation="{{-1}}" class="tool-edit">-</view>
-            <view class="number">{{item.number}}</view>
-            <view bindtap="handleChangeNumber" data-id="{{item.goods_id}}" data-operation="{{1}}" class="tool-edit">+</view>
+  <block wx:if="{{cart.length!==0}}">
+    <view class="cart-main">
+      <view class="cart-item" wx:for="{{cart}}" wx:key="goods_id">
+        <view class="cart-checkbox">
+          <checkbox-group bindchange="handleChangechk" data-id="{{item.goods_id}}">
+            <checkbox checked="{{item.checked}}"></checkbox>
+          </checkbox-group>
+        </view>
+        <navigator>
+          <image class="" src="{{item.goods_small_logo}}"></image>
+        </navigator>
+        <view class="cart-detail-info">
+          <view class="goods-name">{{item.goods_name}}</view>
+          <view class="goods-price-item">
+            <view class="goods-price">¥{{item.goods_price}}</view>
+            <view class="cart-num-tool">
+              <view bindtap="handleChangeNumber" data-id="{{item.goods_id}}" data-operation="{{-1}}" class="tool-edit">
+                -
+              </view>
+              <view class="number">{{item.number}}</view>
+              <view bindtap="handleChangeNumber" data-id="{{item.goods_id}}" data-operation="{{1}}" class="tool-edit">
+                +
+              </view>
+            </view>
           </view>
         </view>
       </view>
     </view>
-  </view>
+  </block>
+  <block wx:else>
+    <image class="" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1592646205792&di=3bb7b9c34e7516590643ae65b92d666a&imgtype=0&src=http%3A%2F%2Fa.mayouwang.com%2Faddons%2Fmihua_mall%2Frecouse%2Fimages%2Femptycart.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+      
+    </image>
+  </block>
 </view>
 <!-- 底部工具栏 -->
 <view class="footer-tool">
@@ -52,9 +60,10 @@
   </view>
   <view class="footer-total-price">
     <view class="price-total">
-      合计: <text class="price-text">¥{{totalPrice}}</text>
+      合计:
+      <text class="price-text">¥{{totalPrice}}</text>
     </view>
     <view class="">包含运费</view>
   </view>
-  <view class="footer-pay">结算({{totalNum}})</view>
+  <view class="footer-pay" bindtap="handlePayEnd">结算({{totalNum}})</view>
 </view>

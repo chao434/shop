@@ -36,7 +36,7 @@ export const openSetting=()=>{
   })
 }
 /**
- * 
+ * 删除商品提示
  * @param {object} param0 
  */
 export const showModal=({content})=>{
@@ -44,6 +44,25 @@ export const showModal=({content})=>{
     wx.showModal({
       title: '提示',
       content: content,
+      success :(res)=>{
+        resolve(res);
+      },
+      fail:(err)=>{
+        reject(err)
+      }
+    })
+  })
+}
+
+/**
+ * 结算判断提示
+ * @param {object} param0 
+ */
+export const showToast=({title})=>{
+  return new Promise((resolve,reject)=>{
+    wx.showToast({
+      title: title,
+      icon: "none",
       success :(res)=>{
         resolve(res);
       },

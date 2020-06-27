@@ -1,5 +1,8 @@
+
+
+
 // pages/cart/index.js
-import {getSetting,chooseAddress,openSetting,showModal} from "../../utils/syncWX.js"
+import {getSetting,chooseAddress,openSetting,showModal,showToast} from "../../utils/syncWX.js"
 import regeneratorRuntime from "../../lib/runtime/runtime.js"
 Page({
   data:{
@@ -108,5 +111,21 @@ Page({
       // 放回data中放回缓存中
       this.setCart(cart)
     }
+  },
+  //结算
+  async handlePayEnd(){
+    //判断是否有收货地址
+    const {address,totalNum} = this.data
+    if (!address){
+      await showToast({title:"请您先添加收货地址"})
+      return
+    }
+    if(totalNum===0){
+      await showToast({title:"您还未选购商品"})
+      return
+    }
+    wx.navigateTo({
+      url: '/pages/pay/index'
+    });
   }
 })
