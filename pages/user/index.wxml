@@ -1,2 +1,9 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="user_info_wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="user_img_wrap">
+        <image class="user_bg" src="{{userInfo.avatarUrl}}" mode="" ></image>    
+        <!-- <view class="user_info">
+            <image class="" src="{{userInfo.avatarUrl}}" mode="aspectFit|aspectFill|widthFix"></image>
+            <view class=""></view>
+        </view> -->
+    </view>
+</view>

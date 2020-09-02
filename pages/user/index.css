@@ -1,0 +1,10 @@
+/* pages/user/index.wxss */
+.user_info_wrap {
+  height: 10vh;
+  background-color: var(--themeColor);
+}
+.user_info_wrap .user_img_wrap .user_bg {
+  height: 40vh;
+  width: 23rpx;
+  filter: blur(2rpx);
+}
