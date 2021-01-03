@@ -1,0 +1,107 @@
+/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+page .user_info_wrap {
+  height: 45vh;
+  background-color: var(--themeColor);
+}
+page .user_info_wrap .user_img_wrap {
+  position: relative;
+}
+page .user_info_wrap .user_img_wrap .user_bg {
+  height: 45vh;
+  filter: blur(10rpx);
+}
+page .user_info_wrap .user_img_wrap .user_info {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, 0%);
+}
+page .user_info_wrap .user_img_wrap .user_info image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+page .user_info_wrap .user_img_wrap .user_info view {
+  margin-top: 30rpx;
+  font-size: 40rpx;
+  text-align: center;
+}
+page .user_info_wrap .user_btn {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, 0%);
+  border: 2rpx solid #0f2f38;
+  padding: 10rpx;
+  border-radius: 12rpx;
+  font-size: 40rpx;
+}
+page .user_content {
+  position: relative;
+}
+page .user_content .user_main {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40rpx;
+}
+page .user_content .user_main .user_history {
+  background-color: #fff;
+  display: flex;
+}
+page .user_content .user_main .user_history navigator {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx;
+}
+page .user_content .user_main .user_history navigator .his_num {
+  color: #f00;
+}
+page .user_content .user_main .user_history navigator .his_name {
+  font-size: 25rpx;
+}
+page .user_content .user_main .my_orders {
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+page .user_content .user_main .my_orders .orders_title {
+  border-bottom: 1px solid #ccc;
+  padding: 15rpx;
+  padding-left: 20rpx;
+}
+page .user_content .user_main .my_orders .orders_content {
+  display: flex;
+  padding: 20rpx 0;
+}
+page .user_content .user_main .my_orders .orders_content navigator {
+  flex: 1;
+  text-align: center;
+}
+page .user_content .user_main .my_orders .orders_content navigator .iconfont {
+  color: var(--themeColor);
+}
+page .user_content .user_main .address_wrap {
+  background-color: #fff;
+  margin: 20rpx 0;
+  padding: 20rpx 0rpx 20rpx 20rpx;
+}
+page .user_content .user_main .app_serve {
+  background-color: #fff;
+}
+page .user_content .user_main .app_serve view {
+  padding: 15rpx 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+page .user_content .user_main .app_serve .serve_kefu {
+  display: flex;
+  justify-content: space-between;
+}
+page .user_content .user_main .recommend_wrap {
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 15rpx 20rpx;
+}

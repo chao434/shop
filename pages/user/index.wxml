@@ -1,9 +1,72 @@
 <view class="user_info_wrap" hover-class="none" hover-stop-propagation="false">
-    <view class="user_img_wrap">
+    <view wx:if="{{userInfo.avatarUrl}}" class="user_img_wrap">
         <image class="user_bg" src="{{userInfo.avatarUrl}}" mode="" ></image>    
-        <!-- <view class="user_info">
+        <view class="user_info">
             <image class="" src="{{userInfo.avatarUrl}}" mode="aspectFit|aspectFill|widthFix"></image>
-            <view class=""></view>
-        </view> -->
+            <view class="">{{userInfo.nickName}}</view>
+        </view>
+    </view>
+    <!-- 没有登录就显示登录按钮 -->
+    <view wx:else class="user_btn" hover-class="none">
+        <navigator class="" target="" url="/pages/login/index" hover-class="navigator-hover" open-type="navigate">登录</navigator>
+    </view>
+</view>
+
+<!-- 下部分 -->
+<view class="user_content">
+    <view class="user_main">
+        <!-- 历史足迹 -->
+        <view class="user_history">
+            <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                <view class="his_num" hover-class="none" hover-stop-propagation="false">0</view>
+                <view class="his_name" hover-class="none" hover-stop-propagation="false">收藏的店铺</view>
+            </navigator>
+            <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                <view class="his_num" hover-class="none" hover-stop-propagation="false">0</view>
+                <view class="his_name" hover-class="none" hover-stop-propagation="false">收藏的商品</view>
+            </navigator>
+            <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                <view class="his_num" hover-class="none" hover-stop-propagation="false">0</view>
+                <view class="his_name" hover-class="none" hover-stop-propagation="false">关注的商品</view>
+            </navigator>
+            <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                <view class="his_num" hover-class="none" hover-stop-propagation="false">0</view>
+                <view class="his_name" hover-class="none" hover-stop-propagation="false">我的足迹</view>
+            </navigator>
+        </view>
+        <!-- 我的订单 -->
+        <view class="my_orders">
+            <view class="orders_title">我的订单</view>
+            <view class="orders_content">
+                <navigator class="" target="" url="/pages/order/index?type=1" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-dingdan1"></view>
+                    <view class="order_name">全部订单</view>
+                </navigator>
+                <navigator class="" target="" url="/pages/order/index?type=2" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-daifukuan"></view>
+                    <view class="order_name">待付款</view>
+                </navigator>
+                <navigator class="" target="" url="/pages/order/index?type=3" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-daishouhuo"></view>
+                    <view class="order_name">待收货</view>
+                </navigator>
+                <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
+                    <view class="iconfont icon-tuikuan"></view>
+                    <view class="order_name">退款退货</view>
+                </navigator>
+            </view>
+        </view>
+        <!-- 收货地址管理 -->
+        <view class="address_wrap">收货地址管理</view>
+        <!-- 相关服务 -->
+        <view class="app_serve">
+            <view class="serve_kefu">
+                <text class="">联系客服</text><text class="">123132231</text>
+            </view>
+            <view class="serve_advice">意见反馈</view>
+            <view class="serve_about">关于我们</view>
+        </view>
+        <!-- 推荐 -->
+        <view class="recommend_wrap">推荐应用给好友</view>
     </view>
 </view>

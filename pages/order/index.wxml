@@ -1,2 +1,7 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<Tabs tabs="{{tabs}}" bindtabsItemTap="handTabsItemTap">
+    <view class="" hover-class="none" hover-stop-propagation="false">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut nam est facilis, labore aliquam laboriosam similique ipsa sunt nostrum minus possimus dolores itaque saepe dicta, commodi quod perferendis voluptatibus impedit.</view>
+    <view class="" hover-class="none" hover-stop-propagation="false"></view>
+    <view class="" hover-class="none" hover-stop-propagation="false"></view>
+    <view class="" hover-class="none" hover-stop-propagation="false"></view>
+
+内容订单</Tabs>
