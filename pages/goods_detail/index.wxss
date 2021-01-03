@@ -16,6 +16,7 @@ page {
   padding: 15rpx;
   font-size: 34rpx;
   color: var(--themeColor);
+  padding-bottom: 20rpx;
 }
 .goods-name-row {
   border-top: 5rpx solid #dedede;
